@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            My forum 
+        </title>
+        <meta charset="utf-8" />
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="main_page.css" type="text/css" />
+
+        <!-- JavaScript -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+        <script src="users.controller.js"></script>
+    </head>
+
+    <body data-ng-app="usersApp" data-ng-controller="allUsersController">
+        <header class="header_area">
+            <h1 class = "layout_left_header"><img src="./images/forum_icon.png" class="icon"/>My Forum</h1>
+        </header>
+        <main>
+            <div class="layout_left_sidebar">
+                <div class="delete_message_link">
+                    <p>Delete message: <button data-ng-click="goToDeleteMessageSite()">Click here</button></p>
+                </div>
+
+                <div>
+                    <form class = "postForm" action="#">
+                        <textarea class="text_area" placeholder="Enter your message here:" data-ng-model="content"></textarea>
+                        <input type="submit" value="Post Message" data-ng-click="addMessage()" class="post_message_button">
+                    </form>
+                </div>
+
+            </div>
+            <div class="layout_main">
+                    <div class = "message_area" data-ng-repeat="message in messages | filter:filterQuery | orderBy: 'message.id'">
+                        <p>{{message.userName}}</p>
+                        <p>{{message.content}}</p>
+                        <p>
+                            <button class="vote_up_button" data-ng-click="voteUp(message.id)">VoteUP</button>
+                            <button class="vote_down_button" data-ng-click="voteDown(message.id)">VoteDown</button>
+                            <label class="vote_number">Number: {{message.numberOfVotes}}</label>
+                        </p>
+                    </div>
+            </div>
+            
+            <div class="layout_right_container">
+                <div class="layout_right_sidebar">
+                    <form class="filter_form">
+                        <label class="filter_text">Search:&nbsp;<input data-ng-model="filterQuery.content" class="filter"
+                                placeholder="Search/filter by message..." /></label>
+                    </form>
+                </div>
+                <div class="layout_right_sidebar">
+                    <form class="filter_form">
+                        <label class="filter_text">Search:&nbsp;<input data-ng-model="filterQuery.userName" class="filter"
+                                placeholder="Search/filter by username" /></label>
+                    </form>
+                </div>
+                <div>
+                    <p>Log out: <button data-ng-click="goToLogInPage()">Click here</button></p>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

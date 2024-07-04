@@ -1,0 +1,139 @@
+﻿body {
+  font-family: georgia, serif;
+  font-size: 18px;
+  line-height: 1.6em;
+  background-color: #000;
+  padding: 0px 40px;
+  min-width: 640px;
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+header p {
+  display: inline;
+}
+
+main {
+  padding: 20px;
+  border-radius: 2px;
+  border: thin solid grey;
+  background-color: #fff;
+}
+
+.link:hover{
+  color: silver; 
+  cursor: pointer; 
+}
+
+button:hover{
+  cursor: pointer;
+}
+
+button{
+  box-shadow: 0 2px 2px black;
+}
+
+main{
+  display: grid; 
+  grid-template-columns: 250px auto 250px;
+  margin: 50px auto; 
+}
+
+.icon{
+  height: 30px; 
+  width: 30px; 
+  margin-right: 10px; 
+}
+
+.layout_left_header {
+  text-align: left;
+  color:#fff;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.layout_right_container{
+  float: left;
+}
+
+.layout_left_sidebar{
+  position: relative; 
+  display: inline-block;
+}
+
+.sidebar_menu{
+  display: none;
+  position: absolute;
+}
+
+.sidebar_menu a{
+  color: #000; 
+  text-decoration: none;
+  display: block;
+  font-size: 36px;
+  padding: 10px 10px; 
+}
+
+.dropdown_button{
+  border: none; 
+  cursor: pointer; 
+  color: #000; 
+  background-color: #fff;
+  padding: 10px 10px;
+  font-size: 36px; 
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  box-shadow: 5px 5px 5px black;
+}
+
+.sidebar_menu a:hover{
+  background-color: silver; 
+  box-shadow: 3px 3px 5px black;
+}
+
+.text_area{
+  border: 1px solid black;
+  background-color: white;
+  box-shadow: 5px 5px 5px black;
+  width: 90%; 
+  height: 200px;
+}
+
+.message_area{
+  border: 1px solid black;
+  background-color: white;
+  box-shadow: 5px 5px 5px black;
+  width: 90%; 
+  margin-bottom: 10px;
+}
+
+.vote_number{
+  float:right;
+}
+
+.filter_text{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.filter_form{
+  margin-bottom: 100px;
+}
+
+.delete_message_link{
+  margin-bottom: 100px;
+}
+
+.delete_message_link a{
+  text-decoration: none; 
+  color: black;
+}
+
+.delete_message_link a:hover{
+  color: silver;
+}
+
+.post_message_button{
+  box-shadow: 2px 2px 2px black;
+}
+
+

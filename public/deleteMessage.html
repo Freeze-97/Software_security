@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            My forum 
+        </title>
+        <meta charset="utf-8" />
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="main_page.css" type="text/css" />
+
+        <!-- JavaScript -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+        <script src="delete.users.controller.js"></script>
+    </head>
+
+    <body data-ng-app="deleteUsersApp" data-ng-controller="deleteUsersController">
+        <header class="header_area">
+            <h1 class = "layout_left_header"><img src="./images/forum_icon.png" class="icon"/>My Forum</h1>
+        </header>
+        <main>
+            <div class="layout_left_sidebar">
+                <div class="home_link">
+                    <button><a href="home.html">Home</a></button>
+                </div>
+            </div>
+            <div class="layout_main">
+                <div class = "message_area" data-ng-repeat="message in messages | filter:filterQuery | orderBy: '-message.id'">
+                    <p>Username: {{message.userName}}</p>
+                    <p>{{message.content}}</p>
+                    <p>
+                        <button class="delete_button" data-ng-click="deleteMessage(message.id)">Delete Message</button>
+                        <label class="vote_number">Number: {{message.numberOfVotes}}</label>
+                    </p>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
